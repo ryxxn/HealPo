@@ -1,7 +1,8 @@
 import React from 'react';
-import { IonIcon} from '@ionic/react';
+import { IonIcon } from '@ionic/react';
 import './style.scss';
 import { caretForward, chevronBackOutline } from 'ionicons/icons';
+import { useHistory } from 'react-router';
 
 interface HeaderProps {
     title?: boolean;
@@ -17,11 +18,14 @@ interface HeaderProps {
  * @returns {*} .
  */
 export const Header: React.FC<HeaderProps> = ({ title = false, back = false, run = false }) => {
+
+    const history = useHistory();
+
     return (
         <header className="header">
             {title ? <p>Healpo</p> : null}
-            {back ? <IonIcon icon={chevronBackOutline} style={{fontSize:"24px"}}/> : null}
-            {run ? <IonIcon icon={caretForward} style={{fontSize:"24px", color:"var(--tomato200)"}}/> : null}
+            {back ? <IonIcon icon={chevronBackOutline} style={{ fontSize: "24px" }} onClick={() => history.goBack()} /> : null}
+            {run ? <IonIcon icon={caretForward} style={{ fontSize: "24px", color: "var(--tomato200)" }} /> : null}
         </header>
     );
 };
