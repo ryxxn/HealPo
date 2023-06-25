@@ -1,0 +1,36 @@
+.homeContainer {
+    width: 100%;
+    height: calc(100% - 32px);
+    margin-top: 32px;
+    display:flex;
+    flex-direction: column;
+    gap: 64px;
+
+    .setCardBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        h1 {
+            margin: 0;
+        }
+
+        .cardBox {
+            width:calc(100% + 32px);
+            padding: 16px;
+            position:relative;
+            left: -16px;
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            -ms-overflow-style: none; // 인터넷 익스플로러
+            scrollbar-width: none; // 파이어폭스
+        }
+
+        /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+        .cardBox::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
