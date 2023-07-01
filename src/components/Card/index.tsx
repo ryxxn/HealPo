@@ -1,7 +1,7 @@
 import React from 'react'
 import "./style.scss"
 import { iconsData } from '../../static'
-import { IonIcon } from '@ionic/react'
+import { IonIcon, IonRippleEffect } from '@ionic/react'
 import { add } from 'ionicons/icons'
 import { useHistory } from 'react-router'
 
@@ -9,7 +9,7 @@ import { useHistory } from 'react-router'
 interface CardProps {
     name: string
     iconNum: number
-    id:string
+    id: string
 }
 
 /**
@@ -27,16 +27,18 @@ export const Card: React.FC<CardProps> = ({ name, iconNum, id }) => {
     // 내 운동 추가 카드이면
     if (name === "add") {
         return (
-            <div className="addCard" onClick={()=>history.push("/setting/" + id)}>
+            <div className="addCard ion-activatable ripple-parent" onClick={() => history.push("/setting/" + id)}>
                 <IonIcon icon={add} style={{ fontSize: "32px" }} />
+                <IonRippleEffect></IonRippleEffect>
             </div>
         )
     }
     // 아니면
     return (
-        <div className="card" onClick={()=>history.push("/setting/" + id)}>
+        <div className="card ion-activatable ripple-parent" onClick={() => history.push("/setting/" + id)}>
             <p>{name}</p>
             <img src={"/assets/icons/" + iconsData[iconNum - 1].name}></img>
+            <IonRippleEffect></IonRippleEffect>
         </div>
     )
 }
