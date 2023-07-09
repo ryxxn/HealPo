@@ -37,7 +37,7 @@ export const Card: React.FC<CardProps> = ({ name, iconNum, id }) => {
     return (
         <div className="card ion-activatable ripple-parent" onClick={() => history.push("/setting/" + id)}>
             <p>{name}</p>
-            <img src={"/assets/icons/" + iconsData[iconNum - 1].name}></img>
+            <img src={"/assets/icons/" + iconsData[iconNum].name}></img>
             <IonRippleEffect></IonRippleEffect>
         </div>
     )
