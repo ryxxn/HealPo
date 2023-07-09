@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'HealPo',
-  webDir: 'dist',
+  webDir: 'build',
   server: {
     androidScheme: 'https'
   }
