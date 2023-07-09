@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@capacitor/android": "5.0.5",
-    "@capacitor/app": "5.0.3",
+    "@capacitor/app": "^5.0.3",
     "@capacitor/core": "5.0.5",
     "@capacitor/haptics": "5.0.4",
     "@capacitor/ios": "5.0.5",
@@ -21,6 +21,7 @@
     "@capacitor/status-bar": "5.0.4",
     "@ionic/react": "^7.0.0",
     "@ionic/react-router": "^7.0.0",
+    "@ionic/storage": "^4.0.0",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
     "ionicons": "^7.0.0",
@@ -28,7 +29,11 @@
     "react-dom": "^18.2.0",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
-    "sass": "^1.63.4"
+    "react-slick": "^0.29.0",
+    "react-uuid": "^2.0.0",
+    "sass": "^1.63.4",
+    "slick-carousel": "^1.8.1",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
     "@capacitor/cli": "5.0.5",
@@ -37,6 +42,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-slick": "^0.23.10",
     "@vitejs/plugin-legacy": "^4.0.2",
     "@vitejs/plugin-react": "^3.1.0",
     "cypress": "^12.7.0",

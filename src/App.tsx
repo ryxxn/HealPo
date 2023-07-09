@@ -20,8 +20,10 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.scss';
-import Home from './pages/Home/Home';
+import { Home } from './pages/Home/Home';
 import { Setting } from './pages/Setting/Setting';
+import { Save } from './pages/Save/Save';
+import { Timer } from './pages/Timer/Timer';
 
 setupIonicReact();
 
@@ -37,6 +39,12 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/setting">
           <Setting />
+        </Route>
+        <Route exact path="/save">
+          <Save />
+        </Route>
+        <Route exact path="/timer/:id">
+          <Timer />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />

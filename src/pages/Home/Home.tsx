@@ -3,18 +3,24 @@ import './Home.scss';
 import { Header } from '../../components/Header';
 import { Container } from '../../components/Container';
 import { Card } from '../../components/Card';
+import { useEffect } from 'react';
+import { getLocalData } from '../../util';
+import { MySetType, useSettingStore } from '../../store/store';
 
-type recommandDataType = {
-  name: string,
-  iconNum: number,
-  id: string
-}
+export const recommandData: MySetType[] = [
+  { name: "5 X 5 세트", iconNum: 11, id: "recommand_a", set: 4, setBreakTime: 0, repeat: 4, repeatList: [{ name: "DOWN", index: 3 }, { name: "UP", index: 1 }] },
+  { name: "Interval Training", iconNum: 4, id: "recommand_b", set: 4, setBreakTime: 0, repeat: 4, repeatList: [{ name: "DOWN", index: 3 }, { name: "UP", index: 1 }] },
+  { name: "10 X 10 세트", iconNum: 3, id: "recommand_c", set: 9, setBreakTime: 0, repeat: 9, repeatList: [{ name: "DOWN", index: 3 }, { name: "UP", index: 1 }] },
+  { name: "GVT Program", iconNum: 4, id: "recommand_d", set: 4, setBreakTime: 0, repeat: 4, repeatList: [{ name: "DOWN", index: 3 }, { name: "UP", index: 1 }] }];
 
-const Home: React.FC = () => {
+export const Home: React.FC = () => {
 
-  const recommandData: recommandDataType[] = [{ name: "5 X 5 세트", iconNum: 11, id: "a" }, { name: "Interval Training", iconNum: 4, id: "b" }, { name: "10 X 10 세트", iconNum: 3, id: "c" }, { name: "GVT Program", iconNum: 4, id: "d" }];
+  const { totalData, fetchData, reset } = useSettingStore();
 
-  const mySetData: recommandDataType[] = [];
+  useEffect(() => {
+    fetchData();
+    reset();
+  }, []);
 
   return (
     <IonPage>
@@ -25,7 +31,7 @@ const Home: React.FC = () => {
             <section className="setCardBox">
               <h1>헬뽀 추천 세트</h1>
               <div className="cardBox">
-                {recommandData.map((obj: recommandDataType) => (
+                {recommandData.map((obj: MySetType) => (
                   <Card name={obj.name} iconNum={obj.iconNum} id={obj.id} key={obj.id} />
                 ))}
               </div>
@@ -33,10 +39,10 @@ const Home: React.FC = () => {
             <section className="setCardBox">
               <h1>내 운동 세트</h1>
               <div className="cardBox">
-                {mySetData.map((obj: recommandDataType) => (
+                {totalData.map((obj: MySetType) => (
                   <Card name={obj.name} iconNum={obj.iconNum} id={obj.id} key={obj.id} />
                 ))}
-                <Card name="add" iconNum={0} id=""/>
+                <Card name="add" iconNum={0} id="" />
               </div>
             </section>
           </article>
@@ -46,4 +52,3 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;

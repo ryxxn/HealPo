@@ -1,0 +1,52 @@
+.HPButton {
+    border-radius: 8px;
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 12%);
+}
+
+.HPButton:hover {}
+
+.setting {
+    background-color: var(--ion-background-color);
+    color: var(--ion-color-dark);
+    font-size:16px;
+}
+
+.setting:disabled {
+    background-color: #EEEEEE;
+    color: #DDDDDD;
+}
+
+.main {
+    background-color: var(--tomato100);
+    color: white;
+    font-size:20px;
+}
+
+.main:disabled {
+    background-color: #BEBEBE;
+    color: #DDDDDD
+}
+
+.close {
+    background-color: #EAEAEA;
+}
+
+.large {
+    width: 100%;
+    // max-width: 360px;
+    height: 72px;
+}
+
+.medium {
+    width: 100%;
+    // max-width: 182px;
+    height: 48px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 50%);
+}
+
+.small {
+    width: 100%;
+    max-width: 138px;
+    height: 48px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 50%);
+}
